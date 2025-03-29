@@ -17,7 +17,7 @@ app.add_middleware(
 )
 
 # Налаштування підключення до БД
-DB_NAME = ""
+DB_NAME = "exam_152"
 DB_USER = "postgres"         # замініть за потреби
 DB_PASSWORD = "admin"     # замініть за потреби
 DB_HOST = "localhost"        # або інша адреса/хост, якщо потрібно
@@ -39,7 +39,10 @@ def get_locations():
         # Прописати оператор SELECT        
         query = """
 
-
+SELECT "date", location, enemy_losses_artillery as data_field
+FROM battle_reports
+WHERE "date" >'2025-03-19'
+order by "date", location
 
 """
 

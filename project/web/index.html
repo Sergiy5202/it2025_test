@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="uk">
   <head>
@@ -9,7 +10,7 @@
 
   <body>
     <nav class="navbar">
-      <div class="logo">Збройні Сили України</div>
+      <div class="logo">Інформаційно-аналітичні технології</div>
       <ul class="nav-menu">
         <li><a href="#">Головна</a></li>
         <li><a href="#">Аналітика</a></li>
@@ -19,41 +20,45 @@
     </nav>
 
     <header class="header">
-      <h1>Дашборд військового аналітика</h1>
+      <h1>Втрати артилерії противника</h1>
     </header>
 
     <main class="container">
       <div class="flex-container">
         <div class="graph-block">
-          <h2>Графічний елемент 1</h2>
+          <h2>Напрямки</h2>
           <div class="graph-placeholder">
             <!-- вставити необхідний елемент -->
+             <div id="info-cards"></div>
           </div>
         </div>
         <div class="graph-block">
-          <h2>Графічний елемент 2</h2>
+          <h2>Графік</h2>
           <div class="graph-placeholder">
             <!-- вставити необхідний елемент -->
-          </div>
-        </div>
-
-        <div class="graph-block">
-          <h2>Графічний елемент 3</h2>
-          <div class="graph-placeholder">
-            <!-- вставити необхідний елемент -->
+             <canvas id="chart1"></canvas>
           </div>
         </div>
 
         <div class="graph-block">
-          <h2>Графічний елемент 4</h2>
+          <h2>Карта</h2>
           <div class="graph-placeholder">
             <!-- вставити необхідний елемент -->
+             <div id="map"></div>
+          </div>
+        </div>
+
+        <div class="graph-block">
+          <h2>Втрати</h2>
+          <div class="graph-placeholder">
+            <!-- вставити необхідний елемент -->
+             <canvas id="prediction"></canvas>
           </div>
         </div>
       </div>
     </main>
 
-    <footer class="footer">© 2025 Збройні Сили України</footer>
+    <footer class="footer">© 2025 Паращук С.М.</footer>
 
     <!-- Chart.js CDN -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

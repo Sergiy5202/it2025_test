@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     Object.entries(locationSummary).forEach(([location, total]) => {
       const card = document.createElement("div");
       card.className = "info-box";
-      card.innerHTML = `<strong>Локація ${location}</strong>: ${total}`;
+      card.innerHTML = `<strong>Напрям ${location}</strong>: ${total}`;
       infoCards.appendChild(card);
     });
   }
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const locations = [...new Set(data.map(item => item.location))]; // Унікальні локації
 
     // Визначаємо базовий колір через складові rgb
-    const baseColor = { r: 3, g: 92, b: 107 };
+    const baseColor = { r: 77, g: 70, b: 52 };
 
     // Початковий рівень прозорості та крок
     const startAlpha = 0.8;
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let alpha = Math.max(startAlpha - index * alphaStep, .2);
 
         return {
-            label: `Локація ${location}`,
+            label: `напрям ${location}`,
             data: labels.map(date => {
                 const found = data.find(entry => entry.date === date && entry.location === location);
                 return found ? found.data_field : 0;
@@ -101,9 +101,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Приклад маркерів для груп (можна замінити реальними даними)
       const locations = [
-        { coords: [50.4501, 30.5234], group: "Group A" }, // Київ
-        { coords: [49.8397, 24.0297], group: "Group B" }, // Львів
-        { coords: [46.4825, 30.7233], group: "Group C" }, // Одеса
+        { coords: [50.9149, 34.7977], group: "Напрям A" }, // Київ
+        { coords: [48.4380, 35.0906], group: "Напрям B" }, // Львів
+        { coords: [46.6370, 32.6131], group: "Напрям C" }, // Одеса
       ];
 
       locations.forEach((loc) => {
@@ -130,10 +130,10 @@ document.addEventListener("DOMContentLoaded", () => {
           data: {
               labels: labels,
               datasets: [{
-                  label: 'LSTM Forecast',
+                  label: 'на 7 днів',
                   data: values,
-                  backgroundColor: 'rgba(54, 162, 235, 0.7)',
-                  borderColor: 'rgba(54, 162, 235, 1)',
+                  backgroundColor: 'rgba(77, 70, 52, 0.7)',
+                  borderColor: 'rgba(77, 70, 52, 1)',
                   borderWidth: 1
               }]
           },
@@ -143,13 +143,13 @@ document.addEventListener("DOMContentLoaded", () => {
                   x: {
                       title: {
                           display: true,
-                          text: 'Date'
+                          text: '29.03.2025'
                       }
                   },
                   y: {
                       title: {
                           display: true,
-                          text: 'Predicted Value'
+                          text: 'значення'
                       },
                       beginAtZero: false
                   }
@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
               plugins: {
                   title: {
                       display: true,
-                      text: '7-Day LSTM Forecast (Bar Chart)'
+                      text: 'прогноз'
                   }
               }
           }
